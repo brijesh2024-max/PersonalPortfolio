@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--
+  PORTFOLIO SITE — quick edit guide
+  ----------------------------------
+  1. Search this file for "EDIT:" comments — those are the only spots you MUST change.
+  2. Skills & Projects are NOT hardcoded here — edit the data arrays at the top of script.js instead.
+  3. Colors/fonts live in style.css under :root — change the theme from one place.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brijesh Kumar Gaur — Backend Developer in Training</title>
+  <meta name="description" content="Portfolio of Brijesh Kumar Gaur, B.Tech ECE student at NIT Srinagar, focused on backend development, SQL, and database-backed systems." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="logo">brijesh<span class="accent">.dev</span></a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">about</a>
+        <a href="#education">education</a>
+        <a href="#skills">skills</a>
+        <a href="#projects">projects</a>
+        <a href="#contact">contact</a>
+        <!-- EDIT: point this at your actual resume PDF once you have one hosted -->
+        <a href="resume.pdf" target="_blank" rel="noopener">resume</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="terminal" role="img" aria-label="Terminal window introducing Brijesh Kumar Gaur, backend developer in training">
+          <div class="terminal-bar">
+            <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+            <span class="terminal-title">brijesh@dev:~</span>
+          </div>
+          <div class="terminal-body" id="terminalBody">
+            <!-- JS types content into here line by line -->
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <p class="eyebrow">-- status</p>
+          <h1>Building toward backend engineering, one query at a time.</h1>
+          <p class="hero-text">
+            B.Tech Electronics &amp; Communication Engineering student at NIT Srinagar with a
+            strong foundation in C++, Python, and DBMS/MySQL. Expanding into backend
+            development through dedicated coursework in advanced SQL and Spring Boot, with
+            hands-on experience building data-driven, database-backed systems.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View projects</a>
+            <a href="#contact" class="btn btn-ghost">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <p class="eyebrow">-- about</p>
+      <h2>Who I am</h2>
+      <div class="about-grid">
+        <p class="about-text">
+          I'm a B.Tech Electronics &amp; Communication Engineering student at NIT Srinagar
+          with a strong foundation in C++, Python, and DBMS/MySQL. I'm expanding into
+          backend development through dedicated coursework in advanced SQL and Spring
+          Boot, with hands-on experience in data-driven, database-backed systems. I'm
+          also interested in AI, semiconductor research, and building scalable backend
+          applications.
+        </p>
+        <ul class="badge-list" id="learningBadges">
+          <!-- JS fills this with "currently learning" tags -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="section" id="education">
+      <p class="eyebrow">SELECT * FROM education;</p>
+      <h2>Education</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <span class="project-status">2024 — 2028</span>
+          <h3>National Institute of Technology, Srinagar</h3>
+          <p>Bachelor of Technology — Electronics &amp; Communication Engineering</p>
+          <div class="tag-list">
+            <span class="tag">CGPA: 7.07 (till 4th sem)</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <span class="project-status">2021 — 2023</span>
+          <h3>St. Thomas Inter College</h3>
+          <p>Class 12, UP Board — 87.4% (2023)</p>
+          <p>Class 10, UP Board — 85% (2021)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <p class="eyebrow">SELECT * FROM skills;</p>
+      <h2>What I work with</h2>
+      <div class="skills-grid" id="skillsGrid">
+        <!-- JS renders skill category cards here -->
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <p class="eyebrow">SELECT * FROM projects;</p>
+      <h2>Things I've built</h2>
+      <div class="projects-grid" id="projectsGrid">
+        <!-- JS renders project cards here -->
+      </div>
+    </section>
+
+    <!-- ============ ACTIVITIES ============ -->
+    <section class="section" id="activities">
+      <p class="eyebrow">SELECT * FROM activities;</p>
+      <h2>Beyond the code</h2>
+      <div class="about-grid">
+        <div>
+          <h3 class="subheading">achievements</h3>
+          <ul class="simple-list">
+            <li>Participated in a college-level coding contest at NIT Srinagar.</li>
+            <li>Actively solving problems on Codeforces to strengthen DSA and competitive programming skills.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="subheading">extra-curriculars</h3>
+          <ul class="simple-list">
+            <li>Active player in college cricket and football teams.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <p class="eyebrow">INSERT INTO messages</p>
+      <h2>Get in touch</h2>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="about-text">
+            Open to backend/SDE roles and internships. Reach out directly or send a
+            message below.
+          </p>
+          <ul class="contact-links">
+            <li><a href="mailto:brijesh_2024bece90@nitsri.ac.in">brijesh_2024bece90@nitsri.ac.in</a></li>
+            <!-- EDIT: replace these three with your real profile links -->
+            <li><a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/yourusername</a></li>
+            <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">linkedin.com/in/yourusername</a></li>
+            <li><a href="https://codeforces.com/profile/yourusername" target="_blank" rel="noopener">codeforces.com/yourusername</a></li>
+          </ul>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">name</label>
+            <input type="text" id="name" name="name" autocomplete="name" />
+            <span class="error" id="nameError"></span>
+          </div>
+          <div class="field">
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" autocomplete="email" />
+            <span class="error" id="emailError"></span>
+          </div>
+          <div class="field">
+            <label for="message">message</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+            <span class="error" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary">Send message</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Brijesh Kumar Gaur. Built with HTML, CSS &amp; JavaScript.</p>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">◑</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
