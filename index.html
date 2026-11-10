@@ -1,205 +1,133 @@
 <!DOCTYPE html>
-<!--
-  PORTFOLIO SITE — quick edit guide
-  ----------------------------------
-  1. Search this file for "EDIT:" comments — those are the only spots you MUST change.
-  2. Skills & Projects are NOT hardcoded here — edit the data arrays at the top of script.js instead.
-  3. Colors/fonts live in style.css under :root — change the theme from one place.
--->
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brijesh Kumar Gaur — Backend Developer in Training</title>
-  <meta name="description" content="Portfolio of Brijesh Kumar Gaur, B.Tech ECE student at NIT Srinagar, focused on backend development, SQL, and database-backed systems." />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080f16">
+  <meta name="description" content="Brijesh Kumar Gaur — Software Engineering Intern, Backend & Full-Stack Development. ECE at NIT Srinagar. Explore Vault, ParkSarthi, Fleet Vision and SocialNet.">
+  <title>Brijesh Kumar Gaur — Backend & Full-Stack Developer</title>
+  <link rel="icon" type="image/svg+xml" href="assets/crystal.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-
-  <!-- ============ NAV ============ -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
   <header class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#top" class="logo">brijesh<span class="accent">.dev</span></a>
-
-      <nav class="nav-links" id="navLinks">
-        <a href="#about">about</a>
-        <a href="#education">education</a>
-        <a href="#skills">skills</a>
-        <a href="#projects">projects</a>
-        <a href="#contact">contact</a>
-        <!-- EDIT: point this at your actual resume PDF once you have one hosted -->
-        <a href="resume.pdf" target="_blank" rel="noopener">resume</a>
+    <div class="nav-inner shell">
+      <a class="logo" href="#top" aria-label="Brijesh, back to top"><span class="logo-mark" aria-hidden="true">◇</span> brijesh<span class="accent">.dev</span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#skills">Stack</a><a href="#projects">Projects</a><a href="#achievements">Milestones</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a>
       </nav>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></button>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-controls="navLinks" aria-expanded="false"><span></span><span></span></button>
+      </div>
     </div>
   </header>
-
-  <main id="top">
-
-    <!-- ============ HERO ============ -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="terminal" role="img" aria-label="Terminal window introducing Brijesh Kumar Gaur, backend developer in training">
-          <div class="terminal-bar">
-            <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
-            <span class="terminal-title">brijesh@dev:~</span>
-          </div>
-          <div class="terminal-body" id="terminalBody">
-            <!-- JS types content into here line by line -->
-          </div>
-        </div>
-
-        <div class="hero-side">
-          <p class="eyebrow">-- status</p>
-          <h1>Building toward backend engineering, one query at a time.</h1>
-          <p class="hero-text">
-            B.Tech Electronics &amp; Communication Engineering student at NIT Srinagar with a
-            strong foundation in C++, Python, and DBMS/MySQL. Expanding into backend
-            development through dedicated coursework in advanced SQL and Spring Boot, with
-            hands-on experience building data-driven, database-backed systems.
-          </p>
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">View projects</a>
-            <a href="#contact" class="btn btn-ghost">Get in touch</a>
-          </div>
-        </div>
+  <main id="main">
+    <section class="hero shell" id="top" aria-labelledby="heroTitle">
+      <canvas id="heroParticles" aria-hidden="true"></canvas>
+      <div class="hero-copy">
+        <p class="availability"><span class="status-dot"></span> Seeking an SDE internship</p>
+        <p class="eyebrow hero-intro">HELLO, WORLD. I'M</p>
+        <h1 id="heroTitle">Brijesh<br><span class="gradient-text">Kumar Gaur.</span></h1>
+        <p class="role-line"><span aria-hidden="true">&gt;</span> <span id="typedRole" aria-hidden="true">Backend Developer</span><span class="typing-caret" aria-hidden="true"></span><span class="sr-only">Backend Developer, Full-Stack Developer, Problem Solver</span></p>
+        <p class="hero-text">ECE undergrad at NIT Srinagar building full-stack apps and backend APIs — transactional workflows, auth, data modeling, and computer-vision road monitoring.</p>
+        <div class="hero-actions"><a class="btn btn-primary magnetic" href="#projects">View Projects <span aria-hidden="true">↗</span></a><a class="btn btn-glass magnetic" href="resume.pdf" download>Download Resume <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg></a></div>
+        <div class="hero-stats" aria-label="Coding profile highlights"><span><i class="tiny-diamond" aria-hidden="true"></i> Codeforces Pupil</span><span>Peak <strong data-count="1214">1,214</strong></span><span>LeetCode DSA</span></div>
       </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <span class="art-coordinate coordinate-top">01 / IDEAS, CRYSTALLIZED</span>
+        <img class="crystal" src="assets/crystal.svg" width="600" height="650" alt="" fetchpriority="high">
+        <span class="art-spark spark-one">+</span><span class="art-spark spark-two">+</span>
+        <div class="crystal-label"><span class="status-dot"></span> ALWAYS BUILDING. ALWAYS LEARNING.</div>
+        <div class="focus-card glass"><div class="focus-icon">&lt;/&gt;</div><div><span class="micro-label">CURRENT FOCUS</span><strong>Systems with substance.</strong><small>Backend · Full-Stack · Problem Solving</small></div><span class="focus-arrow">↗</span></div>
+      </div>
+      <div class="hero-bottom"><span><span class="location-dot" aria-hidden="true">⌖</span> Srinagar, J&amp;K, India</span><a href="#about">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a><span class="hero-index">PORTFOLIO / 2026</span></div>
     </section>
 
-    <!-- ============ ABOUT ============ -->
-    <section class="section" id="about">
-      <p class="eyebrow">-- about</p>
-      <h2>Who I am</h2>
+    <section class="section shell" id="about" aria-labelledby="aboutTitle">
+      <div class="section-heading reveal"><div><p class="eyebrow">01 / THE PERSON BEHIND THE CODE</p><h2 id="aboutTitle">Curiosity, with <span class="muted-heading">direction.</span></h2></div><span class="section-symbol" aria-hidden="true">✳</span></div>
       <div class="about-grid">
-        <p class="about-text">
-          I'm a B.Tech Electronics &amp; Communication Engineering student at NIT Srinagar
-          with a strong foundation in C++, Python, and DBMS/MySQL. I'm expanding into
-          backend development through dedicated coursework in advanced SQL and Spring
-          Boot, with hands-on experience in data-driven, database-backed systems. I'm
-          also interested in AI, semiconductor research, and building scalable backend
-          applications.
-        </p>
-        <ul class="badge-list" id="learningBadges">
-          <!-- JS fills this with "currently learning" tags -->
-        </ul>
+        <div class="about-copy reveal"><p class="large-copy">At the intersection of <span>engineering fundamentals</span> and things people can use.</p><p>I'm Brijesh, an Electronics &amp; Communication Engineering undergraduate at NIT Srinagar, focused on backend and full-stack development.</p><p>My work spans banking transactions, parking marketplaces, and computer-vision road monitoring. I'm seeking a Software Development Engineer internship to keep building and solving meaningful problems.</p><div class="role-tag"><span class="status-dot"></span> Software Engineering Intern<br><span>Backend &amp; Full-Stack Development</span></div></div>
+        <div class="education glass reveal"><p class="micro-label">THE JOURNEY SO FAR</p><ol class="timeline"><li><span class="timeline-dot"></span><p class="timeline-date">2024 — 2028 <span>IN PROGRESS</span></p><h3>National Institute of Technology,<br>Srinagar</h3><p>B.Tech · Electronics &amp; Communication Engineering</p><div class="education-meta"><span>CGPA <strong>7.071 / 10</strong></span><span>Expected Jun 2028</span></div></li><li><span class="timeline-dot"></span><p class="timeline-date">2023</p><h3>St. Thomas Inter College</h3><p>Class XII · UP Board</p><div class="education-meta"><span>Score <strong>87.4%</strong></span></div></li></ol></div>
       </div>
     </section>
 
-    <!-- ============ EDUCATION ============ -->
-    <section class="section" id="education">
-      <p class="eyebrow">SELECT * FROM education;</p>
-      <h2>Education</h2>
+    <section class="section shell" id="skills" aria-labelledby="skillsTitle">
+      <div class="section-heading reveal"><div><p class="eyebrow">02 / MY TOOLKIT</p><h2 id="skillsTitle">The building <span class="muted-heading">blocks.</span></h2></div><p class="section-note">Hover or focus a skill<br>to see the context.</p></div>
+      <div class="skill-marquee" aria-hidden="true"><div class="marquee-track"><span>C++</span><i>◇</i><span>REACT</span><i>◇</i><span>NODE.JS</span><i>◇</i><span>POSTGRESQL</span><i>◇</i><span>TYPESCRIPT</span><i>◇</i><span>MONGODB</span><i>◇</i><span>C++</span><i>◇</i><span>REACT</span><i>◇</i><span>NODE.JS</span><i>◇</i><span>POSTGRESQL</span><i>◇</i><span>TYPESCRIPT</span><i>◇</i><span>MONGODB</span><i>◇</i></div></div>
+      <!-- Project usage below is limited to the supplied facts. -->
+      <div class="skills-grid">
+        <article class="skill-group glass reveal"><div class="skill-group-title"><span aria-hidden="true">{ }</span><h3>Languages</h3><small>01</small></div><div class="skill-list">
+          <span class="skill-chip" tabindex="0">C++<span class="skill-tooltip" role="tooltip">SocialNet: hash maps and AVL-tree timelines.</span></span><span class="skill-chip" tabindex="0">Java<span class="skill-tooltip" role="tooltip">Part of my language toolkit; no project listed.</span></span><span class="skill-chip" tabindex="0">JavaScript<span class="skill-tooltip" role="tooltip">Full-stack development and this portfolio.</span></span><span class="skill-chip" tabindex="0">TypeScript<span class="skill-tooltip" role="tooltip">Vault, ParkSarthi and Fleet Vision.</span></span><span class="skill-chip" tabindex="0">Python<span class="skill-tooltip" role="tooltip">Part of my language toolkit; no project listed.</span></span><span class="skill-chip" tabindex="0">SQL<span class="skill-tooltip" role="tooltip">ParkSarthi: PostgreSQL booking and capacity workflows.</span></span>
+        </div></article>
+        <article class="skill-group glass reveal"><div class="skill-group-title"><span aria-hidden="true">↔</span><h3>Backend</h3><small>02</small></div><div class="skill-list">
+          <span class="skill-chip" tabindex="0">Node.js<span class="skill-tooltip" role="tooltip">Vault's backend and Fleet Vision's API stack.</span></span><span class="skill-chip" tabindex="0">Express.js<span class="skill-tooltip" role="tooltip">Vault: banking API and account workflows.</span></span><span class="skill-chip" tabindex="0">REST APIs<span class="skill-tooltip" role="tooltip">Backend API development across my projects.</span></span><span class="skill-chip" tabindex="0">JWT<span class="skill-tooltip" role="tooltip">Vault: JWT-based sessions.</span></span><span class="skill-chip" tabindex="0">HttpOnly cookie auth<span class="skill-tooltip" role="tooltip">Vault: JWT HttpOnly session cookies.</span></span>
+        </div></article>
+        <article class="skill-group glass reveal"><div class="skill-group-title"><span aria-hidden="true">⌘</span><h3>Frontend</h3><small>03</small></div><div class="skill-list">
+          <span class="skill-chip" tabindex="0">React<span class="skill-tooltip" role="tooltip">Vault and ParkSarthi user interfaces.</span></span><span class="skill-chip" tabindex="0">Next.js<span class="skill-tooltip" role="tooltip">ParkSarthi; API routes in Fleet Vision.</span></span><span class="skill-chip" tabindex="0">HTML<span class="skill-tooltip" role="tooltip">The structure of this portfolio.</span></span><span class="skill-chip" tabindex="0">CSS<span class="skill-tooltip" role="tooltip">The glass and responsive layout of this portfolio.</span></span><span class="skill-chip" tabindex="0">Tailwind<span class="skill-tooltip" role="tooltip">Part of my frontend toolkit; no project listed.</span></span>
+        </div></article>
+        <article class="skill-group glass reveal"><div class="skill-group-title"><span aria-hidden="true">▤</span><h3>Databases &amp; tools</h3><small>04</small></div><div class="skill-list">
+          <span class="skill-chip" tabindex="0">MongoDB<span class="skill-tooltip" role="tooltip">Vault: atomic transfers and balanced ledger entries.</span></span><span class="skill-chip" tabindex="0">Mongoose<span class="skill-tooltip" role="tooltip">Part of my database toolkit; no project listed.</span></span><span class="skill-chip" tabindex="0">PostgreSQL<span class="skill-tooltip" role="tooltip">ParkSarthi: row locking for booking capacity.</span></span><span class="skill-chip" tabindex="0">Git<span class="skill-tooltip" role="tooltip">Part of my development toolkit.</span></span><span class="skill-chip" tabindex="0">GitHub<span class="skill-tooltip" role="tooltip">Find my profile at brijesh2024-max.</span></span><span class="skill-chip" tabindex="0">Postman<span class="skill-tooltip" role="tooltip">Part of my API development toolkit.</span></span>
+        </div></article>
+        <article class="skill-group skill-group-wide glass reveal"><div class="skill-group-title"><span aria-hidden="true">◇</span><h3>Core concepts</h3><small>05</small></div><div class="skill-list">
+          <span class="skill-chip" tabindex="0">DSA<span class="skill-tooltip" role="tooltip">Codeforces, LeetCode and SocialNet.</span></span><span class="skill-chip" tabindex="0">OOP<span class="skill-tooltip" role="tooltip">Part of my core software engineering toolkit.</span></span><span class="skill-chip" tabindex="0">MVC<span class="skill-tooltip" role="tooltip">Part of my application architecture toolkit.</span></span><span class="skill-chip" tabindex="0">RBAC<span class="skill-tooltip" role="tooltip">ParkSarthi: Supabase auth and role-based access.</span></span><span class="skill-chip" tabindex="0">Database transactions<span class="skill-tooltip" role="tooltip">Vault transfers and ParkSarthi capacity checks.</span></span><span class="skill-chip" tabindex="0">Idempotency<span class="skill-tooltip" role="tooltip">Vault: keys that guard against duplicate transfers.</span></span>
+        </div></article>
+      </div>
+    </section>
+
+    <section class="section shell" id="projects" aria-labelledby="projectsTitle">
+      <div class="section-heading reveal"><div><p class="eyebrow">03 / SELECTED WORK</p><h2 id="projectsTitle">Built with <span class="muted-heading">intent.</span></h2></div><p class="section-note">From data structures<br>to real-world workflows.</p></div>
+      <div class="project-toolbar"><div class="project-filters" role="group" aria-label="Filter projects"><button class="filter-btn active" data-filter="all" aria-pressed="true">All <span>04</span></button><button class="filter-btn" data-filter="full-stack" aria-pressed="false">Full-Stack</button><button class="filter-btn" data-filter="backend" aria-pressed="false">Backend</button><button class="filter-btn" data-filter="cpp" aria-pressed="false">C++</button></div><p id="projectCount" class="micro-label" role="status">Showing all 4 projects</p></div>
       <div class="projects-grid">
-        <div class="project-card">
-          <span class="project-status">2024 — 2028</span>
-          <h3>National Institute of Technology, Srinagar</h3>
-          <p>Bachelor of Technology — Electronics &amp; Communication Engineering</p>
-        </div>
-        <div class="project-card">
-          <span class="project-status">2021 — 2023</span>
-          <h3>St. Thomas Inter College</h3>
-          <p>Class 12, UP Board — 87.4% (2023)</p>
-          <p>Class 10, UP Board — 85% (2021)</p>
-        </div>
+        <article class="project-card glass reveal" data-category="full-stack backend">
+          <div class="project-art vault-art" aria-hidden="true"><div class="art-topline"><span>VAULT / TRANSACTION ENGINE</span><span>01</span></div><div class="vault-orbit"></div><div class="vault-symbol">V<span>VAULT</span></div><span class="art-pill art-pill-left">ATOMIC TRANSFERS</span><span class="art-pill art-pill-right">BALANCED LEDGER <i>✓</i></span><div class="art-bottomline"><span>SECURITY AT EVERY LAYER</span><span>↗</span></div></div>
+          <div class="project-content"><div class="project-meta"><span class="project-status"><i></i> In development</span><span>OCT 2026 — PRESENT</span></div><h3>Vault <span>Banking System</span></h3><p>A full-stack banking simulation with secure account access, multi-account management, internal transfers, and searchable transaction history with pagination and CSV export.</p><div class="tag-list"><span>React</span><span>TypeScript</span><span>Node.js</span><span>Express</span><span>MongoDB</span></div><details class="project-details"><summary>Under the hood <span aria-hidden="true">+</span></summary><p>Atomic MongoDB transfer workflows and balanced ledger entries guard against concurrent overspending. Bcrypt hashing, JWT HttpOnly sessions, and idempotency keys secure account workflows. Integration tests cover rollback, concurrency, and ledger integrity.</p></details><div class="project-links"><a href="#" data-coming-soon aria-label="Vault GitHub — link coming soon">GitHub <span aria-hidden="true">↗</span></a><a href="#" data-coming-soon aria-label="Vault live demo — link coming soon">Live Demo <span aria-hidden="true">↗</span></a><span>Links coming soon</span></div></div>
+        </article>
+        <article class="project-card glass reveal" data-category="full-stack backend">
+          <div class="project-art parking-art" aria-hidden="true"><div class="art-topline"><span>PARKSARTHI / FIND YOUR SPACE</span><span>02</span></div><div class="parking-map"><div class="map-road road-one"></div><div class="map-road road-two"></div><div class="map-road road-three"></div><span class="map-block block-one"></span><span class="map-block block-two"></span><span class="map-block block-three"></span></div><div class="parking-pin">P</div><span class="art-pill parking-pill">A SPACE FOR EVERY JOURNEY</span><div class="art-bottomline"><span>DRIVERS ↔ HOSTS</span><span>↗</span></div></div>
+          <div class="project-content"><div class="project-meta"><span class="project-status"><i></i> In development</span><span>SEP 2026 — PRESENT</span></div><h3>ParkSarthi <span>Parking Marketplace</span></h3><p>A driver-host parking marketplace with listing submission, admin approval, city, vehicle and amenity filters, plus vehicle-washing listings.</p><div class="tag-list"><span>Next.js</span><span>React</span><span>TypeScript</span><span>PostgreSQL</span><span>Supabase</span></div><details class="project-details"><summary>Under the hood <span aria-hidden="true">+</span></summary><p>Server-side pricing and transaction-safe booking-capacity checks use PostgreSQL row locking. Supabase authentication and RBAC control access; private photo uploads include ownership checks.</p></details><div class="project-links"><a href="#" data-coming-soon aria-label="ParkSarthi GitHub — link coming soon">GitHub <span aria-hidden="true">↗</span></a><a href="#" data-coming-soon aria-label="ParkSarthi live demo — link coming soon">Live Demo <span aria-hidden="true">↗</span></a><span>Links coming soon</span></div></div>
+        </article>
+        <article class="project-card glass reveal" data-category="backend">
+          <div class="project-art fleet-art" aria-hidden="true"><div class="art-topline"><span>FLEET VISION / ROAD INTELLIGENCE</span><span>03</span></div><div class="road-perspective"><span></span><span></span><span></span></div><div class="detection-box"><span>ROAD CONDITION</span><i></i></div><span class="camera-readout">CAMERA → DETECTION → INCIDENT</span><div class="art-bottomline"><span>SIH 2026 · TEAM INNOVIBE</span><span>↗</span></div></div>
+          <div class="project-content"><div class="project-meta"><span class="project-status status-blue"><i></i> SIH 2026</span><span>JUN — AUG 2026</span></div><h3>Fleet Vision <span>Road Monitoring</span></h3><p>YOLOv11 computer vision detecting road conditions from camera imagery. Built with Team InnoVibe for multi-city monitoring in SIH 2026.</p><div class="tag-list"><span>YOLOv11</span><span>Next.js API Routes</span><span>TypeScript</span><span>Node.js</span></div><details class="project-details"><summary>Under the hood <span aria-hidden="true">+</span></summary><p>Backend APIs and incident data models link detections to timestamps, GPS coordinates and confidence scores, with records for up to 4 cameras per vehicle.</p></details><div class="project-links"><a href="#" data-coming-soon aria-label="Fleet Vision GitHub — link coming soon">GitHub <span aria-hidden="true">↗</span></a><a href="#" data-coming-soon aria-label="Fleet Vision live demo — link coming soon">Live Demo <span aria-hidden="true">↗</span></a><span>Links coming soon</span></div></div>
+        </article>
+        <article class="project-card glass reveal" data-category="cpp">
+          <div class="project-art social-art" aria-hidden="true"><div class="art-topline"><span>SOCIALNET / CONNECTED BY DESIGN</span><span>04</span></div><svg class="network-graphic" viewBox="0 0 500 210" fill="none"><g stroke="currentColor" stroke-opacity=".35"><path d="m250 100-140-50m140 50 145-60m-145 60 100 70m-100-70-100 70m100-70 0-65m0 65 180 20M110 50l40 120m245-130-45 130M110 50l140-15 145 5M150 170h200"/></g><g fill="currentColor"><circle cx="110" cy="50" r="8"/><circle cx="395" cy="40" r="6"/><circle cx="350" cy="170" r="9"/><circle cx="150" cy="170" r="6"/><circle cx="250" cy="35" r="5"/><circle cx="430" cy="120" r="5"/></g><circle cx="250" cy="100" r="33" fill="currentColor" fill-opacity=".1" stroke="currentColor" stroke-opacity=".7"/><circle cx="250" cy="95" r="7" stroke="currentColor" stroke-width="2"/><path d="M236 115c0-13 28-13 28 0" stroke="currentColor" stroke-width="2"/></svg><span class="art-pill social-pill">O(1) LOOKUPS · O(log n) TIMELINES</span><div class="art-bottomline"><span>DATA STRUCTURES IN ACTION</span><span>↗</span></div></div>
+          <div class="project-content"><div class="project-meta"><span class="project-status status-purple"><i></i> C++ / Data structures</span><span>MAR — MAY 2026</span></div><h3>SocialNet <span>Engine Simulator</span></h3><p>A social-network engine built around efficient profile and relationship lookups, with balanced-tree timelines and the C++ standard library.</p><div class="tag-list"><span>C++</span><span>STL</span><span>Hash Maps</span><span>AVL Trees</span></div><details class="project-details"><summary>Under the hood <span aria-hidden="true">+</span></summary><p>Profile and relationship lookups use std::unordered_map for average O(1) access. AVL-tree timelines support O(log n) insertion and retrieval.</p></details><div class="project-links"><a href="#" data-coming-soon aria-label="SocialNet GitHub — link coming soon">GitHub <span aria-hidden="true">↗</span></a><a href="#" data-coming-soon aria-label="SocialNet live demo — link coming soon">Live Demo <span aria-hidden="true">↗</span></a><span>Links coming soon</span></div></div>
+        </article>
+      </div>
+      <p id="linkStatus" class="feedback" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="section shell" id="achievements" aria-labelledby="achievementsTitle">
+      <div class="section-heading reveal"><div><p class="eyebrow">04 / MILESTONES</p><h2 id="achievementsTitle">Progress, <span class="muted-heading">in practice.</span></h2></div><p class="section-note">Build. Solve. Learn. Repeat.</p></div>
+      <div class="milestones">
+        <article class="milestone reveal"><span class="milestone-number">01</span><div class="milestone-icon" aria-hidden="true">✧</div><div><p class="micro-label">SMART INDIA HACKATHON 2026</p><h3>Finalist evaluation round</h3><p>Fleet Vision · Team InnoVibe · Problem Statement 26124</p></div><span class="milestone-end">SIH '26 ↗</span></article>
+        <article class="milestone reveal"><span class="milestone-number">02</span><div class="milestone-icon" aria-hidden="true">⌁</div><div><p class="micro-label">CODEFORCES ROUND 1125 · DIV. 3</p><h3>Ranked <span data-count="1497">1,497</span> globally</h3><p><span data-count="5">5</span> problems solved · Pupil · Peak rating 1,214</p></div><span class="milestone-end">COMPETITIVE PROGRAMMING ↗</span></article>
+        <article class="milestone reveal"><span class="milestone-number">03</span><div class="milestone-icon" aria-hidden="true">⌘</div><div><p class="micro-label">LEETCODE · DSA</p><h3>Patterns over shortcuts.</h3><p>DP, graphs, trees, binary search, two pointers, sliding window, backtracking and heaps.</p></div><span class="milestone-end">PROBLEM SOLVING ↗</span></article>
       </div>
     </section>
 
-    <!-- ============ SKILLS ============ -->
-    <section class="section" id="skills">
-      <p class="eyebrow">SELECT * FROM skills;</p>
-      <h2>What I work with</h2>
-      <div class="skills-grid" id="skillsGrid">
-        <!-- JS renders skill category cards here -->
-      </div>
+    <section class="section shell" id="profiles" aria-labelledby="profilesTitle">
+      <div class="section-heading reveal"><div><p class="eyebrow">05 / THE PRACTICE GROUND</p><h2 id="profilesTitle">A little better, <span class="muted-heading">every problem.</span></h2></div><span class="section-note">Find me as @dominator_45</span></div>
+      <div class="profiles-grid">
+        <a class="profile-card glass reveal" href="https://codeforces.com/profile/dominator_45" target="_blank" rel="noopener noreferrer"><div class="profile-heading"><span class="profile-logo cf-logo" aria-hidden="true"><i></i><i></i><i></i></span><div><h3>Codeforces</h3><span>@dominator_45</span></div><span class="external-arrow" aria-hidden="true">↗</span></div><div class="profile-stats"><div><strong data-count="1214">1,214</strong><span>PEAK RATING</span></div><div><strong class="pupil">Pupil</strong><span>ACHIEVED RANK</span></div><div><strong data-count="5">5</strong><span>SOLVED IN ROUND 1125</span></div></div><div class="profile-footer"><span class="status-dot"></span> View competitive programming profile <span aria-hidden="true">↗</span></div></a>
+        <a class="profile-card glass reveal" href="https://leetcode.com/u/dominator_45/" target="_blank" rel="noopener noreferrer"><div class="profile-heading"><span class="profile-logo lc-logo" aria-hidden="true">〈/〉</span><div><h3>LeetCode</h3><span>@dominator_45</span></div><span class="external-arrow" aria-hidden="true">↗</span></div><div class="leetcode-topics"><span>Dynamic programming</span><span>Graphs &amp; trees</span><span>Binary search</span><span>Two pointers</span><span>Sliding window</span><span>Backtracking</span><span>Heaps</span></div><div class="profile-footer"><span class="status-dot"></span> Explore DSA practice <span aria-hidden="true">↗</span></div></a>
+      </div><p class="stats-note">Profile highlights are a supplied snapshot. Open the profiles for current activity.</p>
+      <div class="terminal glass reveal"><div class="terminal-bar"><div class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>brijesh@portfolio: ~</span><span class="terminal-hint">A LITTLE EASTER EGG</span></div><div class="terminal-body"><div id="terminalOutput" role="log" aria-live="polite"><p><span class="terminal-prompt">❯</span> whoami</p><p>Brijesh Kumar Gaur — Backend &amp; Full-Stack Development.</p><p class="terminal-muted">Curious? Type help to explore.</p></div><form id="terminalForm" autocomplete="off"><label for="terminalInput"><span aria-hidden="true">❯</span><span class="sr-only">Terminal command</span></label><input id="terminalInput" name="command" type="text" placeholder="Try whoami, skills, or projects" spellcheck="false" autocapitalize="off" maxlength="120" aria-describedby="terminalInstructions"><button type="submit" aria-label="Run terminal command">↵</button></form><p id="terminalInstructions" class="sr-only">Available commands: help, whoami, skills, projects, contact, clear. Press Enter to run.</p></div></div>
     </section>
 
-    <!-- ============ PROJECTS ============ -->
-    <section class="section" id="projects">
-      <p class="eyebrow">SELECT * FROM projects;</p>
-      <h2>Things I've built</h2>
-      <div class="projects-grid" id="projectsGrid">
-        <!-- JS renders project cards here -->
-      </div>
-    </section>
-
-    <!-- ============ ACTIVITIES ============ -->
-    <section class="section" id="activities">
-      <p class="eyebrow">SELECT * FROM activities;</p>
-      <h2>Beyond the code</h2>
-      <div class="about-grid">
-        <div>
-          <h3 class="subheading">achievements</h3>
-          <ul class="simple-list">
-            <li>Participated in a college-level coding contest at NIT Srinagar.</li>
-            <li>Actively solving problems on Codeforces to strengthen DSA and competitive programming skills.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="subheading">extra-curriculars</h3>
-          <ul class="simple-list">
-            <li>Active player in college cricket and football teams.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ CONTACT ============ -->
-    <section class="section" id="contact">
-      <p class="eyebrow">INSERT INTO messages</p>
-      <h2>Get in touch</h2>
-
-      <div class="contact-grid">
-        <div class="contact-info">
-          <p class="about-text">
-            Open to backend/SDE roles and internships. Reach out directly or send a
-            message below.
-          </p>
-          <ul class="contact-links">
-            <li><a href="mailto:brijesh_2024bece90@nitsri.ac.in">brijesh_2024bece90@nitsri.ac.in</a></li>
-            <!-- EDIT: replace these three with your real profile links -->
-           <li><a href="https://github.com/brijesh2024-max" target="_blank" rel="noopener">github.com/brijesh2024-max</a></li>
-<li><a href="https://linkedin.com/in/brijesh-gaur-00671a32b" target="_blank" rel="noopener">linkedin.com/in/brijesh-gaur</a></li>
-<li><a href="https://codeforces.com/profile/dominator_45" target="_blank" rel="noopener">codeforces.com/dominator_45</a></li>
-          </ul>
-        </div>
-
-        <form class="contact-form" id="contactForm" novalidate>
-          <div class="field">
-            <label for="name">name</label>
-            <input type="text" id="name" name="name" autocomplete="name" />
-            <span class="error" id="nameError"></span>
-          </div>
-          <div class="field">
-            <label for="email">email</label>
-            <input type="email" id="email" name="email" autocomplete="email" />
-            <span class="error" id="emailError"></span>
-          </div>
-          <div class="field">
-            <label for="message">message</label>
-            <textarea id="message" name="message" rows="4"></textarea>
-            <span class="error" id="messageError"></span>
-          </div>
-          <button type="submit" class="btn btn-primary">Send message</button>
-          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-
+    <section class="contact-section shell" id="contact" aria-labelledby="contactTitle"><div class="contact-orb" aria-hidden="true"></div><div class="contact-content reveal"><p class="eyebrow">06 / WHAT'S NEXT?</p><p class="availability"><span class="status-dot"></span> Seeking a Software Development Engineer internship</p><h2 id="contactTitle">Let's build<br><span class="gradient-text">something.</span><span class="contact-star" aria-hidden="true">✳</span></h2><p>Have an opportunity or an idea to share?<br>I'd love to hear from you.</p><div class="email-row"><a href="mailto:brijesh_2024bece90@nitsri.ac.in">brijesh_2024bece90@nitsri.ac.in <span aria-hidden="true">↗</span></a><button id="copyEmail" type="button" class="copy-button" aria-label="Copy email address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></svg></button></div><p id="copyStatus" class="feedback" role="status" aria-live="polite"></p><div class="contact-links"><a href="tel:+919320656615">+91 9320656615 <span aria-hidden="true">↗</span></a><a href="https://linkedin.com/in/brijesh-gaur-00671a32b" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://github.com/brijesh2024-max" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://codeforces.com/profile/dominator_45" target="_blank" rel="noopener noreferrer">Codeforces <span aria-hidden="true">↗</span></a><a href="https://leetcode.com/u/dominator_45/" target="_blank" rel="noopener noreferrer">LeetCode <span aria-hidden="true">↗</span></a></div></div></section>
   </main>
-
-  <footer class="footer">
-    <p>&copy; <span id="year"></span> Brijesh Kumar Gaur. Built with HTML, CSS &amp; JavaScript.</p>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">◑</button>
-  </footer>
-
-  <script src="script.js"></script>
+  <footer class="footer shell"><a class="logo" href="#top"><span class="logo-mark" aria-hidden="true">◇</span> brijesh<span class="accent">.dev</span></a><p>© <span id="year">2026</span> Brijesh Kumar Gaur</p><span>CRAFTED WITH CURIOSITY <span class="accent">✧</span></span></footer>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" hidden>↑</button>
 </body>
 </html>
